@@ -11,7 +11,7 @@ Fields :- ['roll', 'name', 'age', 'email', 'phone']
 
 import csv
 # Define global variables
-student_fields = ['ID', 'firstName', 'lastName', 'gender', 'dob', 'nic', 'contact', 'email', 'address', 'guardianName', 'guardianContact']
+student_fields = ['roll', 'name', 'age', 'email', 'phone']
 student_database = 'students.csv'
 
 
