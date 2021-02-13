@@ -1,18 +1,39 @@
 import os
 from tkinter import *
+from tkinter import messagebox
 import csv
 
 
 def new():
     txtFirstName.delete(0,'end')
+    txtLastName.delete(0,'end')
+    txtDOB.delete(0,'end')
+    txtNIC.delete(0,'end')
+    txtContact.delete(0,'end')
+    txtEmail.delete(0,'end')
+    txtAddress.delete(0,'end') 
+    txtGName.delete(0,'end')
+    txtGContact.delete(0,'end')
 
 def cancel():
     window.destroy()
+
+def writeToFile():
+    with open('studentsTable.csv', 'a') as f:
+        w=csv.writer(f, quoting=csv.QUOTE_ALL)
+        w.writerow([txtFirstName.get(),txtLastName.get(),Male,Female,txtDOB.get(),txtNIC.get(),txtContact.get(),
+        txtEmail.get(),txtAddress.get(),txtGName.get(),txtGContact.get()])
+    messagebox.showinfo("showinfo", "Student Registered Successfully!")
+    new() 
+    
 
 def studentRegistrationGUI():
 
     global window
     global txtFirstName
+    global txtLastName
+    global Male
+    global Female
     global txtDOB
     global txtNIC
     global txtContact 
@@ -72,42 +93,11 @@ def studentRegistrationGUI():
     txtGName.grid(row = 21, column = 3, sticky = E)
     txtGContact.grid(row = 23, column = 3, sticky = E)
 
-
-    # def writeToFile():
-    #     with open('studentsTable.csv', 'a') as f:
-    #         w=csv.writer(f, quoting=csv.QUOTE_ALL)
-    #         w.writerow([txtFirstName.get(),txtLastName.get(),Male,Female,txtDOB.get(),txtNIC.get(),txtContact.get(),
-    #         txtEmail.get(),txtAddress.get(),txtGName.get(),txtGContact.get()])
-
-    # # def refresh():
-    # #     self.destroy()
-    # #     __init__()
-    # if __name__ == '__main__':
-    #     def refresh():
-    #         window.destroy()
-    #     #     vp_start_gui()
-
-    #     # vp_start_gui()
-
-
     Button(window, text = "New", width = 12, bd = 4, command = new, bg = "LightBlue1").grid(row = 25, column = 1, sticky = E)
     Button(window, text = "Submit", width = 12, bd = 4, command=writeToFile, bg = "LightBlue1").grid(row = 25, column = 3, sticky = E)
     Button(window, text = "Cancel", width = 12, bd = 4, command = cancel, bg = "LightBlue1").grid(row = 25, column = 4, sticky = E)
 
     window.mainloop()
 
-def writeToFile():
-    with open('studentsTable.csv', 'a') as f:
-        w=csv.writer(f, quoting=csv.QUOTE_ALL)
-        w.writerow([txtFirstName.get(),txtLastName.get(),Male,Female,txtDOB.get(),txtNIC.get(),txtContact.get(),
-        txtEmail.get(),txtAddress.get(),txtGName.get(),txtGContact.get()])
-
-# def refresh():
-#     self.destroy()
-#     __init__()
-# def refresh():
-#     window.destroy()
 
 studentRegistrationGUI()
-
-# window.mainloop()
