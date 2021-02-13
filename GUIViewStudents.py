@@ -31,7 +31,7 @@ def studentDetails():
         for col in reader:
             c = 0
             for row in col:
-                table = Label(window, width = 10, height = 2, text = row, relief = RIDGE)
+                table = Label(window, width = 15, height = 2, text = row, relief = RIDGE)
                 table.grid(row = r, column = c)
                 c += 1
             r += 1

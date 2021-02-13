@@ -7,6 +7,7 @@ import csv
 def new():
     txtFirstName.delete(0,'end')
     txtLastName.delete(0,'end')
+    txtGender.delete(0,'end')
     txtDOB.delete(0,'end')
     txtNIC.delete(0,'end')
     txtContact.delete(0,'end')
@@ -21,7 +22,7 @@ def cancel():
 def writeToFile():
     with open('studentsTable.csv', 'a') as f:
         w=csv.writer(f, quoting=csv.QUOTE_ALL)
-        w.writerow([txtFirstName.get(),txtLastName.get(),Male,Female,txtDOB.get(),txtNIC.get(),txtContact.get(),
+        w.writerow([txtFirstName.get(),txtLastName.get(),txtGender.get(),txtDOB.get(),txtNIC.get(),txtContact.get(),
         txtEmail.get(),txtAddress.get(),txtGName.get(),txtGContact.get()])
     messagebox.showinfo("showinfo", "Student Registered Successfully!")
     new() 
@@ -32,8 +33,9 @@ def studentRegistrationGUI():
     global window
     global txtFirstName
     global txtLastName
-    global Male
-    global Female
+    global txtGender
+    # global Male
+    # global Female
     global txtDOB
     global txtNIC
     global txtContact 
@@ -57,7 +59,7 @@ def studentRegistrationGUI():
 
     Label(window, text = "First Name").grid(row = 5, column = 2, sticky = E)
     Label(window, text = "Last Name").grid(row = 7, column = 2, sticky = E)
-    Label(window, text = "Gender").grid(row = 9, column = 2, sticky = E)
+    Label(window, text = "Gender").grid(row = 8, column = 2, sticky = E)
     Label(window, text = "Date of Birth").grid(row = 11, column = 2, sticky = E)
     Label(window, text = "NIC").grid(row = 13, column = 2, sticky = E)
     Label(window, text = "Contact Number").grid(row = 15, column = 2, sticky = E)
@@ -68,9 +70,9 @@ def studentRegistrationGUI():
 
     txtFirstName = Entry(window, width = 20)
     txtLastName = Entry(window, width = 20)
-    # txtGender = Entry(window, width = 20)
-    Male = Checkbutton(window, text="Male")
-    Female = Checkbutton(window, text="Female")
+    txtGender = Entry(window, width = 20)
+    # Male = Checkbutton(window, text="Male")
+    # Female = Checkbutton(window, text="Female")
     txtDOB = Entry(window, width = 20)
     txtNIC = Entry(window, width = 20)
     txtContact = Entry(window, width = 20)
@@ -83,8 +85,9 @@ def studentRegistrationGUI():
 
     txtFirstName.grid(row = 5, column = 3, sticky = E)
     txtLastName.grid(row = 7, column = 3, sticky = E)
-    Male.grid(row = 9, column = 3, sticky = E)
-    Female.grid(row = 9, column = 4, sticky = W)
+    txtGender.grid(row = 8, column = 3, sticky = E)
+    # Male.grid(row = 9, column = 3, sticky = E)
+    # Female.grid(row = 9, column = 4, sticky = W)
     txtDOB.grid(row = 11, column = 3, sticky = E)
     txtNIC.grid(row = 13, column = 3, sticky = E)
     txtContact.grid(row = 15, column = 3, sticky = E)
