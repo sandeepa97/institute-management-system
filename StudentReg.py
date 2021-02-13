@@ -11,12 +11,6 @@ class App(Frame):
         Label(text='Student ID:').pack(row=1,side=LEFT,padx=5,pady=5)
         self.e = Entry(root, width=10)
         self.e.pack(side=LEFT,padx=5,pady=5)
-        Label(text='First Name:').pack(row=2,side=LEFT,padx=5,pady=5)
-        self.e = Entry(root, width=10)
-        self.e.pack(side=LEFT,padx=5,pady=5)
-        Label(text='Last Name:').pack(row=3,side=LEFT,padx=5,pady=5)
-        self.e = Entry(root, width=10)
-        self.e.pack(side=LEFT,padx=5,pady=5)
 
 
         self.b = Button(root, text='Submit', command=self.writeToFile)
@@ -34,3 +28,5 @@ if __name__ == "__main__":
     app=App(master=root)
     app.mainloop()
     root.mainloop()
+
+    
