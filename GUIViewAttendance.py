@@ -20,11 +20,11 @@ def paymentDetails():
 
     # Components
 
-    title = Label(window, text = "Payment Details") 
+    title = Label(window, text = "Attendance Details") 
     title.config(font =("Courier", 14))
     title.grid(row = 0, column = 2, sticky = E)
 
-    with open("paymentsTable.csv", newline = "") as file:
+    with open("attendanceTable.csv", newline = "") as file:
         reader = csv.reader(file)
 
         r = 1
