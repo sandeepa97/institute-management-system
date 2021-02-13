@@ -12,17 +12,16 @@ def login():
     global user
     with open('admin.csv', 'r') as f:
         reader = csv.reader(f, delimiter=',')
-        my_dict = [k:v for k,v in reader]
+        credentials = {k:v for k,v in reader}
     user = txtUsername.get()
-    password1 = txtPassword.get()
-    if (my_dict[user]) == (password1):
-        auth1 = True
-        welcome1 = ("Welcome", user)
-        messagebox.showinfo("Login info", welcome1)
+    password = txtPassword.get()
+    if (credentials[user]) == (password):
+        welcome = ("Welcome", user)
+        messagebox.showinfo("Login Successful", welcome)
         window.destroy()
         openDashboard()
     else:
-        messagebox.showerror("Login error", "Incorrect username")
+        messagebox.showerror("Login Error", "Incorrect Password!")
 
 def LoginUI():
 

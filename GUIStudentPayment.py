@@ -18,7 +18,7 @@ def writeToFile():
     with open('paymentsTable.csv', 'a') as f:
         w=csv.writer(f, quoting=csv.QUOTE_ALL)
         w.writerow([txtNIC.get(),txtPaymentType.get(),txtAmount.get(),txtDate.get()])
-    messagebox.showinfo("showinfo", "Payment Added Successfully!")
+    messagebox.showinfo("System", "Payment Added Successfully!")
     new() 
     
 

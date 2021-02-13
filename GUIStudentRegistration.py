@@ -24,7 +24,7 @@ def writeToFile():
         w=csv.writer(f, quoting=csv.QUOTE_ALL)
         w.writerow([txtFirstName.get(),txtLastName.get(),txtGender.get(),txtDOB.get(),txtNIC.get(),txtContact.get(),
         txtEmail.get(),txtAddress.get(),txtGName.get(),txtGContact.get()])
-    messagebox.showinfo("showinfo", "Student Registered Successfully!")
+    messagebox.showinfo("System", "Student Registered Successfully!")
     new() 
     
 

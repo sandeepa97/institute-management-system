@@ -18,7 +18,7 @@ def writeToFile():
     with open('attendanceTable.csv', 'a') as f:
         w=csv.writer(f, quoting=csv.QUOTE_ALL)
         w.writerow([txtNIC.get(),txtClass.get(),txtDate.get(),txtTime.get()])
-    messagebox.showinfo("showinfo", "Attendance Marked Successfully!")
+    messagebox.showinfo("System", "Attendance Marked Successfully!")
     new() 
     
 

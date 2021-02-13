@@ -1,5 +1,6 @@
 import os
 from tkinter import *
+from tkinter import messagebox
 
 
 
@@ -20,6 +21,8 @@ def openAttendanceDetails():
     os.system('python GUIViewAttendance.py')
 def openReports():
     os.system('python GUIReports.py')
+def openDeleteStudents():
+    messagebox.showerror("Opz :)", "Coming Soon")
 
 def systemDashboardGUI():
 
@@ -42,7 +45,7 @@ def systemDashboardGUI():
 
     Button(window, text = "Student Registration", width = 15, bd = 4, command = openStundentRegister, bg = "LightBlue1").grid(row = 2, column = 4, sticky = E)
     Button(window, text = "View Students", width = 15, bd = 4, command = openStundentDetails, bg = "LightBlue1").grid(row = 3, column = 4, sticky = E)
-    Button(window, text = "Delete Students", width = 15, bd = 4, command = cancel, bg = "LightBlue1").grid(row = 4, column = 4, sticky = E)
+    Button(window, text = "Delete Students", width = 15, bd = 4, command = openDeleteStudents, bg = "LightBlue1").grid(row = 4, column = 4, sticky = E)
     Button(window, text = "Mark Payment", width = 15, bd = 4, command = openStundentPayment, bg = "LightBlue1").grid(row = 2, column = 6, sticky = E)
     Button(window, text = "View Payments", width = 15, bd = 4, command = openPaymentDetails, bg = "LightBlue1").grid(row = 3, column = 6, sticky = E)
     Button(window, text = "Mark Attendance", width = 15, bd = 4, command = openStundentAttendance, bg = "LightBlue1").grid(row = 4, column = 6, sticky = E)
